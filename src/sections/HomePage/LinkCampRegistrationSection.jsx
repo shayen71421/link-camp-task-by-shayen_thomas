@@ -40,7 +40,7 @@ const LinkCampRegistrationSection = () => {
           </div>
           
           <a
-            href="https://ieee-link.org/linkcamp2025"
+            href="https://ieee-link.org/Link_Camp_2026"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-[#00629B] text-white font-semibold py-4 px-10 rounded-lg hover:bg-[#004D7A] transition duration-300 text-lg"

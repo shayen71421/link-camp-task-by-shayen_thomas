@@ -78,7 +78,7 @@ const LinkCampNavbar = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              href="https://ieee-link.org/linkcamp2025"
+              href="https://ieee-link.org/Link_Camp_2026"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#00629B] text-white font-medium py-2 px-5 rounded-lg hover:bg-[#004D7A] transition text-sm"

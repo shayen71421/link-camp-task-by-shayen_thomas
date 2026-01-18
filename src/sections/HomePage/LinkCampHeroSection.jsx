@@ -111,7 +111,7 @@ const LinkCampHeroSection = () => {
           transition={{ duration: 0.8, delay: 0.8 }}
         >
           <a
-            href="https://ieee-link.org/linkcamp2025"
+            href="https://ieee-link.org/Link_Camp_2026"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-white text-[#00629B] font-bold py-4 px-10 rounded-lg hover:bg-opacity-90 transition duration-300 transform hover:scale-105 text-lg"
