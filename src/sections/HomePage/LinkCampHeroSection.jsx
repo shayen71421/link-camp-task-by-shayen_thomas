@@ -1,30 +1,67 @@
-import React from 'react';
+'use client';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-const LinkCampHeroSection = () => {
-  return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#00629B] via-[#004D7A] to-[#003A5C] relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-[#00629B] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#0093D0] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+const slides = [
+  '/images/1.png',
+  '/images/2.png',
+  '/images/3.png',
+];
 
-      <div className="relative z-10 text-center px-6 md:px-12 max-w-4xl mx-auto">
-        {/* IEEE LINK Logo */}
+const LinkCampHeroSection = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      {/* Background Image Slider - Crossfade */}
+      {slides.map((slide, index) => (
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="mb-8 flex justify-center"
+          key={index}
+          initial={false}
+          animate={{ opacity: index === currentSlide ? 1 : 0 }}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
+          className="absolute inset-0 z-0"
         >
           <Image
-            src="/images/logo.svg"
-            alt="IEEE LINK"
-            width={120}
-            height={60}
-            className="h-16 w-auto"
+            src={slide}
+            alt={`Slide ${index + 1}`}
+            fill
+            className="object-cover"
+            priority={index === 0}
           />
+          {/* Dark overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#00629B]/80 via-[#004D7A]/70 to-[#003A5C]/80"></div>
         </motion.div>
+      ))}
+
+      {/* Slide indicators */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex gap-2">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              index === currentSlide ? 'bg-white scale-125' : 'bg-white/50 hover:bg-white/75'
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
+
+      {/* Background decorative elements */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-[#00629B] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob z-10"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#0093D0] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000 z-10"></div>
+
+      <div className="relative z-10 text-center px-6 md:px-12 max-w-4xl mx-auto">
+        
 
         {/* Main Title */}
         <motion.h1
@@ -33,7 +70,7 @@ const LinkCampHeroSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-5xl md:text-7xl font-bold text-white mb-4 tracking-tight"
         >
-          LINK CAMP <span className="text-[#0093D0]">2025</span>
+          LINK CAMP '25
         </motion.h1>
 
         {/* Subtitle */}
