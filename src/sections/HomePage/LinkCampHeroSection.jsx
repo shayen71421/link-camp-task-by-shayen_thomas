@@ -34,11 +34,11 @@ const LinkCampHeroSection = () => {
             src={slide}
             alt={`Slide ${index + 1}`}
             fill
-            className="object-cover"
+            className="object-cover blur-[2px] scale-105"
             priority={index === 0}
           />
-          {/* Dark overlay for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#00629B]/80 via-[#004D7A]/70 to-[#003A5C]/80"></div>
+          {/* Glass overlay for professional look */}
+          <div className="absolute inset-0 backdrop-blur-[1px] bg-gradient-to-br from-[#00629B]/85 via-[#004D7A]/75 to-[#003A5C]/85"></div>
         </motion.div>
       ))}
 
