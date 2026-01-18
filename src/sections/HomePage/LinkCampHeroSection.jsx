@@ -91,16 +91,16 @@ const LinkCampHeroSection = () => {
           className="grid md:grid-cols-3 gap-4 mb-10 max-w-2xl mx-auto"
         >
           <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-4 border border-white border-opacity-20">
-            <p className="text-blue-200 text-xs uppercase tracking-wider mb-1">Date</p>
-            <p className="text-white text-lg font-semibold">24th January 2026</p>
+            <p className="text-black-200 text-xs uppercase tracking-wider mb-1">Date</p>
+            <p className="text-black text-lg font-semibold">24th January 2026</p>
           </div>
           <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-4 border border-white border-opacity-20">
-            <p className="text-blue-200 text-xs uppercase tracking-wider mb-1">Venue</p>
-            <p className="text-white text-lg font-semibold">Kochi, Kerala</p>
+            <p className="text-black-200 text-xs uppercase tracking-wider mb-1">Venue</p>
+            <p className="text-black text-lg font-semibold">Kochi, Kerala</p>
           </div>
           <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-4 border border-white border-opacity-20">
-            <p className="text-blue-200 text-xs uppercase tracking-wider mb-1">Deadline</p>
-            <p className="text-white text-lg font-semibold">7th January 2026</p>
+            <p className="text-black-200 text-xs uppercase tracking-wider mb-1">Deadline</p>
+            <p className="text-black text-lg font-semibold">7th January 2026</p>
           </div>
         </motion.div>
 
