@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
           content="LINK CAMP 2025 - A premier event by IEEE LINK on 24th January 2025 in Kochi, Kerala. Join us for technical sessions, networking, and innovation."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ieee-link.org/linkcamp2025" />
+        <meta property="og:url" content="https://ieee-link.org/Link_Camp_2026" />
         <meta property="og:title" content="LINK CAMP 2025 | IEEE LINK" />
         <meta
           property="og:description"
